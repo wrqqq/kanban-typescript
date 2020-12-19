@@ -3,10 +3,12 @@ import { ColumnContainer, ColumnTitle } from "./styles"
 
 interface ColumnProps {
     text: string
+    index: number
 }
-    
 
-export const Column = ({ text, children } :  React.PropsWithChildren<ColumnProps>) => {
+
+
+export const Column = ({ text, children }: React.PropsWithChildren<ColumnProps>) => {
     return (
         <ColumnContainer>
             <ColumnTitle>{text}</ColumnTitle>

@@ -1,4 +1,9 @@
-import React, { createContext } from "react"
+import React, { createContext, useReducer, useContext } from "react"
+
+export const useAppState = () => {
+    return useContext(AppStateContext)
+}
+
 
 const AppStateContext = createContext<AppStateContextProps>({} as AppStateContextProps)
 
@@ -22,7 +27,7 @@ export interface AppState {
 }
 
 
-export const AppStateProvider = ({ children }: React.PropsWithChildren<{ }>) => {
+export const AppStateProvider = ({ children }: React.PropsWithChildren<{}>) => {
     return (
         <AppStateContext.Provider value={{ state: appData }}>
             {children}
